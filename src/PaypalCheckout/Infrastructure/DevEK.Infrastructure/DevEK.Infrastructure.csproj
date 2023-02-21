@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="PaymentGateway\" />
+    <None Remove="PaymentGateway\PayPal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PaymentGateway\" />
+    <Folder Include="PaymentGateway\PayPal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\DevEK.Application\DevEK.Application.csproj" />
+  </ItemGroup>
+</Project>
