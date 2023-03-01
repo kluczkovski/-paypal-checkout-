@@ -16,7 +16,7 @@ namespace DevEK.WebMVC.Configurations
 			webApplicationBuilder.Services.Configure<PayPalSettings>(config.GetSection(nameof(PayPalSettings)))
 				.AddSingleton(sp => sp.GetRequiredService<IOptions<PayPalSettings>>().Value);
 
-			webApplicationBuilder.Services.AddSingleton<IPayPalAuthentication, PayPalAuthentication>();
+			webApplicationBuilder.Services.AddHttpClient<IPayPalAuthentication, PayPalAuthentication>();
 			webApplicationBuilder.Services.AddSingleton<IPayPalService, PayPalService>();
 
 			return webApplicationBuilder;
