@@ -12,7 +12,6 @@
     <None Remove="PaymentGateway\PayPal\Abstractions\" />
     <None Remove="PaymentGateway\PayPal\Models\" />
     <None Remove="PaymentGateway\PayPal\Models\Response\" />
-    <None Remove="PaymentGateway\PayPal\Models\Request\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PaymentGateway\" />
@@ -20,6 +19,5 @@
     <Folder Include="PaymentGateway\PayPal\Abstractions\" />
     <Folder Include="PaymentGateway\PayPal\Models\" />
     <Folder Include="PaymentGateway\PayPal\Models\Response\" />
-    <Folder Include="PaymentGateway\PayPal\Models\Request\" />
   </ItemGroup>
 </Project>

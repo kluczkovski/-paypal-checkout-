@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -10,7 +11,7 @@ namespace DevEK.Infrastructure.PaymentGateway.PayPal
 {
 	public class PayPalAuthentication : IPayPalAuthentication
     {
-        private const string ENDPOINT = "v1/oauth2/token";
+        private const string ENDPOINT = "/v1/oauth2/token";
         private readonly PayPalSettings _payPalSetting;
         private readonly HttpClient _httpclient;
       
@@ -48,9 +49,9 @@ namespace DevEK.Infrastructure.PaymentGateway.PayPal
             var auth = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{_payPalSetting.ClientId}:{_payPalSetting.Secret}"));
 
             var requestMessage = new HttpRequestMessage();
-            requestMessage.RequestUri = new Uri(_payPalSetting.BaseUrl + "/" + ENDPOINT);
+            requestMessage.RequestUri = new Uri(_payPalSetting.BaseUrl + ENDPOINT);
             requestMessage.Method = HttpMethod.Post;
-            requestMessage.Headers.Add("Authorization", $"Basic {auth}");
+            requestMessage.Headers.Add(HttpRequestHeader.Authorization.ToString(), $"Basic {auth}");
             requestMessage.Content = new FormUrlEncodedContent(content);
 
             return requestMessage;

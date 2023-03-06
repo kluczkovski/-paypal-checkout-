@@ -6,7 +6,7 @@ namespace DevEK.Application.PaymentGateway.PayPal.Models
 	public class PayPalPurchaseUnit
 	{
 		[JsonPropertyName("amount")]
-		public PayPalAmount amount { get; set; }
+		public PayPalAmount Amount { get; set; }
 
         [JsonPropertyName("reference_id")]
         public string ReferenceId { get; set; }
@@ -15,7 +15,7 @@ namespace DevEK.Application.PaymentGateway.PayPal.Models
         public PayPalShipping Shipping { get; set; }
 
         [JsonPropertyName("payments")]
-        public PayPalPayments payments { get; set; }
+        public PayPalPayments Payments { get; set; }
 	}
 }
 

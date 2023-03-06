@@ -8,18 +8,15 @@ namespace DevEK.WebMVC.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly IPayPalService _payPalServices;
-
-    public HomeController(ILogger<HomeController> logger, IPayPalService payPalService)
+  
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
-        _payPalServices = payPalService;
     }
 
     public IActionResult Index()
     {
-        _payPalServices.Process();
-
+  
         return View();
     }
 
